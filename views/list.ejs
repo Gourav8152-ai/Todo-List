@@ -1,0 +1,20 @@
+<%- include('header') %> 
+
+    <div class="box" id="heading">
+        <h1><%= listTitle %></h1>
+    </div>
+
+    <div class="box">
+            <% for(var i = 0; i< newListItems.length; i++){ %>
+                <div class="item">
+                    <input type="checkbox">
+                    <p><%= newListItems[i] %> </p>
+                    <img class="deleteIcon" src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png"/>
+                </div>
+            <% } %>
+            <form action="/" method="post" name="item" class="item">
+                <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+                <button type="submit" name="list" value=<%= listTitle %> >+</button>
+            </form>
+    </div>
+<%- include('footer') %> 
